@@ -1,0 +1,41 @@
+.mailSearch {
+  min-width: 301px;
+  height: 30px;
+  padding: 11px 179px 0 320px;
+}
+
+.mailSearchInput {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding-right: 30px;
+  padding-left: 16px;
+
+  border: none;
+  background-color: #e2e2e2;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  color: #6287bd;
+  font: 15px 'YS Text - Regular', sans-serif;
+  outline: none;
+}
+
+.mailSearchInput::placeholder {
+  color: #000000;
+  opacity: 0.3;
+}
+
+.mailSearchClear {
+  display: inline-block;
+  margin-bottom: 4px;
+  margin-left: -22px;
+  color: #000000;
+  cursor: pointer;
+  font-size: 22px;
+  opacity: 0.3;
+  vertical-align: middle;
+}
+
+.mailSearchClear:hover {
+  opacity: 1;
+}

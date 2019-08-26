@@ -1,0 +1,72 @@
+.boxHeader {
+  display: flex;
+  height: 38px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.boxHeaderCheckAllLettersWrapper {
+  padding: 11px 10px 11px 20px;
+  cursor: pointer;
+}
+
+.checkLetter {
+  width: 16px;
+  height: 16px;
+}
+
+.checkLetterVisuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+
+.checkLetterBox {
+  display: inline-block;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  overflow: hidden;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, .15);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.checkLetterVisuallyHidden:checked + .checkLetterBox {
+  background-color: #4A90E2;
+  background-image: url(../../resourses/images/check.svg);
+}
+
+.checkLetterVisuallyHidden:focus + .checkLetterBox {
+  box-shadow: 0 0 0 0.1em #4A90E2,
+  0 0 0 0.3em #ffff00;
+}
+
+.boxHeaderButtonWrapper {
+  color: #cccccc;
+}
+
+.boxHeaderButton {
+  padding: 15px 15px 11px 10px;
+  border: none;
+  outline: none;
+  background-color: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+.boxHeaderButton:hover {
+  color: #000000;
+  opacity: 0.75;
+}

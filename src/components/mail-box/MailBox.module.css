@@ -1,0 +1,21 @@
+.mailBox{
+  margin: 13px 20px 12px 191px;
+  min-height: 530px;
+  min-width: 589px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .34);
+  border-radius: 3px;
+  background-color: #ffffff;
+  font-family: HelveticaNeue, sans-serif;
+}
+
+.mailBoxHrLine {
+  height: 1px;
+  border-top: solid 1px #e2e2e2;
+}
+
+.mailBoxLettersSectionWrapper {
+  min-height: 380px;
+}
+
+
+

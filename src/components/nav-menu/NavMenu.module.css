@@ -1,0 +1,55 @@
+.navMenu {
+  font-family: HelveticaNeue, sans-serif;
+  width: 147px;
+  white-space: normal;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 22px;
+  float: left;
+}
+
+.navMenuActionButton {
+  border: none;
+  outline: none;
+  width: 147px;
+  min-height: 32px;
+  text-align: center;
+  border-radius: 3px;
+  background-color: #6287bd;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.95;
+  cursor: pointer;
+}
+
+.navMenuActionButton:hover {
+  opacity: 1;
+}
+
+.navMenuActionButtonIndent {
+  margin-top: 5px;
+}
+
+.menuListTabs {
+  width: 147px;
+  margin-top: 8px;
+  padding: 0;
+}
+
+.menuListTabsTab {
+  list-style-type: none;
+  box-sizing: border-box;
+  padding: 7px 10px;
+  width: 147px;
+  min-height: 14px;
+  color: #707070;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.menuListTabsIncomingTab,
+.menuListTabsTab:hover {
+  border-radius: 3px;
+  background-color: #cdd6e4;
+}

@@ -1,0 +1,12 @@
+.header {
+  min-width: 800px;
+  height: 45px;
+}
+
+.mailLogo {
+  display: inline-block;
+  margin-top: 12px;
+  margin-left: 6px;
+  cursor: pointer;
+  float: left;
+}
