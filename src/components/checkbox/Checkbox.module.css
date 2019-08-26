@@ -1,0 +1,51 @@
+.checkboxWrapper {
+  padding: 13px 10px 13px 20px;
+  cursor: pointer;
+}
+
+.checkboxFlex {
+  display: flex;
+}
+
+.checkLetter {
+  width: 16px;
+  height: 16px;
+}
+
+.checkLetterVisuallyHidden {
+  position: absolute;
+
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.checkLetterBox {
+  position: absolute;
+
+  display: inline-block;
+  overflow: hidden;
+  width: 14px;
+  height: 14px;
+
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.checkLetterVisuallyHidden:checked + .checkLetterBox {
+  background-color: #4a90e2;
+  background-image: url(../../resources/images/check.svg);
+}
+
+.checkLetterVisuallyHidden:focus + .checkLetterBox {
+  box-shadow: 0 0 0 0.1em #4a90e2, 0 0 0 0.3em #ffff00;
+}

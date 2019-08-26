@@ -1,0 +1,32 @@
+.boxHeader {
+  display: flex;
+  height: 38px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/*.checkAllLettersWrapper {*/
+/*  padding: 11px 10px 11px 20px;*/
+/*  cursor: pointer;*/
+/*}*/
+
+.buttonWrapper {
+  color: #cccccc;
+}
+
+.button {
+  padding: 15px 15px 11px 10px;
+
+  border: none;
+  background-color: inherit;
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+}
+
+.button:hover {
+  color: #000000;
+  opacity: 0.75;
+}

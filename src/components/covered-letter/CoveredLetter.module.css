@@ -1,0 +1,109 @@
+.coveredLetter {
+  display: flex;
+}
+
+.mainContentDistinguished {
+  -moz-user-select: text;
+  -ms-user-select: text;
+  -o-user-select: text;
+  -webkit-user-select: text;
+}
+
+.miniLogoWrapper {
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  margin-top: 5px;
+}
+
+.miniSenderPic {
+  width: 30px;
+  height: 30px;
+}
+
+.clickToOpenWrapper {
+  display: flex;
+  min-width: 485px;
+  flex-grow: 1;
+  padding: 11px 10px;
+  margin: 0;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.notReadMark {
+  font-weight: 700;
+}
+
+.isRead {
+  font-weight: 500;
+}
+
+.senderName {
+  width: 160px;
+}
+
+.letterItem {
+  overflow: hidden;
+  margin-top: 5px;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+}
+
+.isReadMarkNotRead {
+  background-color: #6287bd;
+  border-radius: 100px;
+}
+
+.isReadMark,
+.isReadMarkNotRead {
+  width: 10px;
+  height: 10px;
+  margin-left: 8px;
+}
+
+.titleText {
+  width: 220px;
+  flex: 1;
+  margin-right: 35px;
+  margin-left: 10px;
+  white-space: nowrap;
+}
+
+.dateInfo {
+  max-width: 50px;
+  margin: 5px 10px 0 0;
+  color: #9b9b9b;
+  font-weight: 500;
+  text-align: right;
+}
+
+.addLetterAnimation {
+  animation: addLetter 0.5s linear;
+}
+
+.removeLetterAnimation {
+  animation: removeLetter 0.5s linear;
+}
+
+@keyframes addLetter {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes removeLetter {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+}

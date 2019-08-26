@@ -1,0 +1,15 @@
+.mailBody {
+  padding: 0;
+  margin: 0;
+  background-color: #e5eaf0;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  -webkit-user-select: none;
+  white-space: nowrap;
+}
+
+@font-face {
+  font-family: HelveticaNeue;
+  src: url('../../resources/fonts/HelveticaNeueCyr-Medium.otf') format('truetype');
+}
