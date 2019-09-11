@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import styles from './NavMenu.module.css';
@@ -19,13 +20,16 @@ class NavMenu extends Component<{ dispatch: Dispatch<MailBoxActionTypes> }> {
           onClick={() => {
             this.props.dispatch(receiveLetter());
           }}
+
         >
           Получить письмо
         </button>
         <ul className={styles.menuListTabs}>
+
           <li className={`${styles.menuListTabsTab} ${styles.menuListTabsIncomingTab}`}>
             Входящие
           </li>
+
           <li className={styles.menuListTabsTab}>Отправленные</li>
           <li className={styles.menuListTabsTab}>Удалённые</li>
           <li className={styles.menuListTabsTab}>Спам</li>
@@ -38,3 +42,4 @@ class NavMenu extends Component<{ dispatch: Dispatch<MailBoxActionTypes> }> {
 }
 
 export default connect()(NavMenu);
+

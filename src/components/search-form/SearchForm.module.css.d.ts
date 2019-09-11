@@ -4,4 +4,3 @@ declare const styles: {
   readonly "clear": string;
 };
 export = styles;
-

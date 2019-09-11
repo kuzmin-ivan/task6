@@ -5,6 +5,7 @@ import stylesMailBox from '../mail-box/MailBox.module.css';
 export class MailBoxFooter extends Component {
   public render() {
     return (
+
       <footer className={styles.footer}>
         <div className={stylesMailBox.hrLine} />
         <div className={styles.footerInfo}>
@@ -18,6 +19,7 @@ export class MailBoxFooter extends Component {
           <a href="https://yandex.ru/" className={styles.footerLink}>
             Яндекс
           </a>
+
         </div>
       </footer>
     );

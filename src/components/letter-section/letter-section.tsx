@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import { connect } from 'react-redux';
 import styles from './LetterSection.module.css';
 import CoveredLetter from '../covered-letter/covered-letter';
@@ -33,3 +34,4 @@ class LetterSection extends Component<ReturnType<typeof mapStateToProps>> {
 }
 
 export default connect(mapStateToProps)(LetterSection);
+
