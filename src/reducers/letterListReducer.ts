@@ -3,6 +3,7 @@ import {
   CHECK_LETTER,
   IMailBoxState,
   MailBoxActionTypes,
+  OPEN_LETTER,
   RECEIVE_LETTER,
   REMOVE_CHECKED_LETTERS
 } from './types';
@@ -35,6 +36,13 @@ export function letterListReducer(state = initialState, action: MailBoxActionTyp
       return {
         letters: state.letters.filter(letter => !letter.checked),
         checkbox: false
+      };
+    case OPEN_LETTER:
+      return {
+        letters: state.letters.map(letter =>
+          letter.id === action.displayLetter.id ? { ...letter, isRead: true } : letter
+        ),
+        checkbox: state.checkbox
       };
     default:
       return state;

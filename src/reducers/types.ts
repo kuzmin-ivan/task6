@@ -1,4 +1,5 @@
 export interface ILetter {
+  isRead: boolean;
   visible: boolean;
   showing: boolean;
   removing: boolean;
@@ -44,7 +45,8 @@ export type MailBoxActionTypes =
   | IReceiveLetterAction
   | ICheckAllLettersAction
   | ICheckLetterAction
-  | IRemoveCheckedLettersAction;
+  | IRemoveCheckedLettersAction
+  | LetterActionTypes;
 
 export interface ILetterOpenCloseState {
   displayLetter?: ILetter;
@@ -79,3 +81,7 @@ interface IChangeThemeAction {
 }
 
 export type ThemeActionTypes = IChangeThemeAction;
+
+export interface IMailBoxHeaderState {
+  isHeaderDisabled: boolean;
+}

@@ -100,6 +100,7 @@ export function generateRandomLetter(): ILetter {
     removing: false,
     visible: false,
     checked: false,
+    isRead: false,
     id: nextLetterId++
   };
 }

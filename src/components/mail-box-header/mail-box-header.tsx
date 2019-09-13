@@ -6,15 +6,17 @@ import styles from './MailBoxHeader.module.css';
 import Checkbox, { MAIN_CHECKBOX_ID } from '../checkbox/checkbox';
 import { AppState } from '../../reducers';
 import { MailBoxActionTypes } from '../../reducers/types';
-import { removeCheckedLetters } from '../../actions/actions';
+import { checkAllLetters, removeCheckedLetters } from '../../actions/actions';
 
 const mapStateToProps = (state: AppState) => ({
   mainCheckbox: state.mailBox.checkbox,
-  themeClass: state.theme.isDarkTheme ? styles.buttonDark : styles.button
+  themeClass: state.theme.isDarkTheme ? styles.buttonDark : styles.button,
+  isHeaderVisible: state.isMailBoxHeaderDisabled.isHeaderDisabled ? styles.hideHeader : ''
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<MailBoxActionTypes>) => ({
-  removeCheckedLetters: () => dispatch(removeCheckedLetters())
+  removeCheckedLetters: () => dispatch(removeCheckedLetters()),
+  checkAllLetters: (checked: boolean) => dispatch(checkAllLetters(checked))
 });
 
 class MailBoxHeader extends Component<
@@ -22,8 +24,12 @@ class MailBoxHeader extends Component<
 > {
   public render() {
     return (
-      <div className={styles.boxHeader}>
-        <Checkbox id={MAIN_CHECKBOX_ID} checked={this.props.mainCheckbox} />
+      <div className={`${styles.boxHeader} ${this.props.isHeaderVisible}`}>
+        <Checkbox
+          id={MAIN_CHECKBOX_ID}
+          checked={this.props.mainCheckbox}
+          onChangeHandler={() => this.props.checkAllLetters(this.props.mainCheckbox)}
+        />
         <label htmlFor="forward" className={styles.buttonWrapper}>
           <input id="forward" type="button" className={this.props.themeClass} value="Переслать" />
         </label>

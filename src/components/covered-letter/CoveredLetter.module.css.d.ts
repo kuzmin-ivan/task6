@@ -4,7 +4,7 @@ declare const styles: {
   readonly miniLogoWrapper: string;
   readonly miniSenderPic: string;
   readonly clickToOpenWrapper: string;
-  readonly notReadMark: string;
+  readonly isNotRead: string;
   readonly isRead: string;
   readonly senderName: string;
   readonly letterItem: string;

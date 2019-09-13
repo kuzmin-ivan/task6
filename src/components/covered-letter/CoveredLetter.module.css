@@ -1,7 +1,8 @@
 .coveredLetter {
   display: flex;
-  opacity: 1;
+
   border-bottom: solid 1px #e2e2e2;
+  opacity: 1;
 }
 
 .mainContentDistinguished {
@@ -33,7 +34,7 @@
   vertical-align: middle;
 }
 
-.notReadMark {
+.isNotRead {
   font-weight: 700;
 }
 

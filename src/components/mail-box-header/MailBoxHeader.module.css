@@ -33,3 +33,7 @@
   color: #fffda7;
   opacity: 0.75;
 }
+
+.hideHeader {
+  display: none;
+}

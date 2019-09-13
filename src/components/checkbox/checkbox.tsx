@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
-import { MailBoxActionTypes } from '../../reducers/types';
-import { checkAllLetters, checkLetter } from '../../actions/actions';
 import styles from './Checkbox.module.css';
 import { AppState } from '../../reducers';
 
@@ -12,12 +9,14 @@ const mapStateToProps = (state: AppState) => ({
   themeClass: state.theme.isDarkTheme ? styles.dark : ''
 });
 
-class Checkbox extends Component<{
+interface ICheckBoxProps {
   id: string;
   checked: boolean;
-  dispatch: Dispatch<MailBoxActionTypes>;
   themeClass: string;
-}> {
+  onChangeHandler: () => void;
+}
+
+class Checkbox extends Component<ICheckBoxProps> {
   public render() {
     return (
       <label
@@ -29,13 +28,7 @@ class Checkbox extends Component<{
           className={styles.checkLetterVisuallyHidden}
           type="checkbox"
           checked={this.props.checked}
-          onChange={() => {
-            if (this.props.id === MAIN_CHECKBOX_ID) {
-              this.props.dispatch(checkAllLetters(this.props.checked));
-            } else {
-              this.props.dispatch(checkLetter(+this.props.id));
-            }
-          }}
+          onChange={this.props.onChangeHandler}
         />
         <span className={`${styles.checkLetterBox} ${this.props.themeClass}`} />
       </label>
