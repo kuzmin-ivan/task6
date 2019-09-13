@@ -1,20 +1,18 @@
 .boxHeader {
   display: flex;
   height: 38px;
+
+  border-bottom: solid 1px #e2e2e2;
   font-size: 13px;
   font-weight: 500;
 }
-
-/*.checkAllLettersWrapper {*/
-/*  padding: 11px 10px 11px 20px;*/
-/*  cursor: pointer;*/
-/*}*/
 
 .buttonWrapper {
   color: #cccccc;
 }
 
-.button {
+.button,
+.buttonDark {
   padding: 15px 15px 11px 10px;
 
   border: none;
@@ -28,5 +26,10 @@
 
 .button:hover {
   color: #000000;
+  opacity: 0.75;
+}
+
+.buttonDark:hover {
+  color: #fffda7;
   opacity: 0.75;
 }

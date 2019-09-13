@@ -2,6 +2,10 @@
   background-color: white;
 }
 
+.openedLetter.dark {
+  background-color: rgb(42, 42, 46);
+}
+
 .closer {
   margin-top: 10px;
   margin-right: 20px;
@@ -10,6 +14,10 @@
   float: right;
   font-size: 22px;
   opacity: 0.4;
+}
+
+.closer.dark {
+  color: #ffffff;
 }
 
 .closer:hover {

@@ -1,5 +1,4 @@
 declare const styles: {
-  readonly "mailBody": string;
+  readonly mailBody: string;
 };
 export = styles;
-

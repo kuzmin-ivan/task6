@@ -18,3 +18,7 @@
   margin-bottom: 7px;
   background-color: #000000;
 }
+
+.stripe.dark {
+  background-color: #ffffff;
+}

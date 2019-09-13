@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Header } from '../header/header';
+import Header from '../header/header';
 import styles from './App.module.css';
 import { Main } from '../main/main';
 

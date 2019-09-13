@@ -9,7 +9,8 @@ import { MailBoxActionTypes } from '../../reducers/types';
 import { removeCheckedLetters } from '../../actions/actions';
 
 const mapStateToProps = (state: AppState) => ({
-  mainCheckbox: state.mailBox.checkbox
+  mainCheckbox: state.mailBox.checkbox,
+  themeClass: state.theme.isDarkTheme ? styles.buttonDark : styles.button
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<MailBoxActionTypes>) => ({
@@ -24,22 +25,22 @@ class MailBoxHeader extends Component<
       <div className={styles.boxHeader}>
         <Checkbox id={MAIN_CHECKBOX_ID} checked={this.props.mainCheckbox} />
         <label htmlFor="forward" className={styles.buttonWrapper}>
-          <input id="forward" type="button" className={styles.button} value="Переслать" />
+          <input id="forward" type="button" className={this.props.themeClass} value="Переслать" />
         </label>
         <label htmlFor="remove" className={styles.buttonWrapper}>
           <input
             id="remove"
             type="button"
-            className={styles.button}
+            className={this.props.themeClass}
             value="Удалить"
             onClick={this.props.removeCheckedLetters}
           />
         </label>
         <label htmlFor="spam" className={styles.buttonWrapper}>
-          <input id="spam" type="button" className={styles.button} value="Это спам!" />
+          <input id="spam" type="button" className={this.props.themeClass} value="Это спам!" />
         </label>
         <label htmlFor="read" className={styles.buttonWrapper}>
-          <input id="read" type="button" className={styles.button} value="Прочитано" />
+          <input id="read" type="button" className={this.props.themeClass} value="Прочитано" />
         </label>
       </div>
     );

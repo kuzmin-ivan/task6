@@ -1,6 +1,4 @@
 declare const styles: {
-  readonly "mainContentTopIndent": string;
+  readonly mainContentTopIndent: string;
 };
 export = styles;
-
-

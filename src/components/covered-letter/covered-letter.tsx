@@ -1,9 +1,9 @@
-import React, { Component, RefObject } from 'react';
+import React, { Component } from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import styles from './CoveredLetter.module.css';
 import { ILetter, LetterActionTypes, MailBoxActionTypes } from '../../reducers/types';
-import { openLetter, receiveAnimationLetter } from '../../actions/actions';
+import { openLetter } from '../../actions/actions';
 import Checkbox from '../checkbox/checkbox';
 
 interface ICoveredLetter {
@@ -12,32 +12,10 @@ interface ICoveredLetter {
 }
 
 class CoveredLetter extends Component<ICoveredLetter> {
-  public constructor(props: ICoveredLetter) {
-    super(props);
-    this.letterAnimationDivRef = React.createRef();
-  }
-
-  public componentWillUnmount(): void {
-    this.props.dispatch(receiveAnimationLetter(this.props.letter.id));
-  }
-
-  private readonly letterAnimationDivRef: RefObject<HTMLDivElement>;
-
   public render() {
-    const shownClass = this.props.letter.showing ? styles.addLetterAnimation : '';
-    const removedClass = this.props.letter.removing ? styles.removeLetterAnimation : '';
     return (
-      <div
-        className={`${styles.coveredLetter} ${shownClass} ${removedClass}`}
-        ref={this.letterAnimationDivRef}
-        onAnimationEnd={() => {
-          if (this.props.letter.removing) {
-
-          }
-        }}
-      >
+      <div className={`${styles.coveredLetter} `}>
         <Checkbox id={`${this.props.letter.id}`} checked={this.props.letter.checked} />
-
         <div className={styles.miniLogoWrapper}>
           <img
             className={styles.miniSenderPic}

@@ -8,7 +8,8 @@ import { closeLetter } from '../../actions/actions';
 import { AppState } from '../../reducers';
 
 const mapStateToProps = (state: AppState) => ({
-  displayLetter: state.openCloseLetter.displayLetter
+  displayLetter: state.openCloseLetter.displayLetter,
+  themeClass: state.theme.isDarkTheme ? styles.dark : ''
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<LetterActionTypes>) => ({
@@ -20,9 +21,9 @@ class OpenedLetter extends Component<
 > {
   public render() {
     return (
-      <div className={styles.openedLetter}>
+      <div className={`${styles.openedLetter} ${this.props.themeClass}`}>
         <div
-          className={styles.closer}
+          className={`${styles.closer} ${this.props.themeClass}`}
           onClick={() =>
             this.props.displayLetter
               ? this.props.closeLetter(this.props.displayLetter)

@@ -4,7 +4,6 @@ import {
   IMailBoxState,
   MailBoxActionTypes,
   RECEIVE_LETTER,
-  RECEIVE_LETTER_ANIMATION,
   REMOVE_CHECKED_LETTERS
 } from './types';
 
@@ -20,13 +19,6 @@ export function letterListReducer(state = initialState, action: MailBoxActionTyp
         letters: [action.payload, ...state.letters],
         checkbox: false
       };
-    case RECEIVE_LETTER_ANIMATION:
-      return {
-        letters: state.letters.map(letter =>
-          letter.id === action.id ? { ...letter, showing: action.showing } : letter
-        ),
-        checkbox: state.checkbox
-      };
     case CHECK_ALL_LETTERS:
       return {
         letters: state.letters.map(letter => ({ ...letter, checked: action.checked })),
@@ -41,9 +33,7 @@ export function letterListReducer(state = initialState, action: MailBoxActionTyp
       };
     case REMOVE_CHECKED_LETTERS:
       return {
-        letters: state.letters.map(letter =>
-          letter.checked ? { ...letter, removing: true } : letter
-        ),
+        letters: state.letters.filter(letter => !letter.checked),
         checkbox: false
       };
     default:

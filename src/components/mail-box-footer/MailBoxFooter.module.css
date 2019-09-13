@@ -1,7 +1,8 @@
 .footer {
   min-width: 530px;
   margin-top: 75px;
-  background-color: #ffffff;
+
+  border-top: solid 1px #e2e2e2;
   border-radius: 3px;
 }
 
@@ -12,7 +13,8 @@
   text-align: right;
 }
 
-.footerLink {
+.footerLink,
+.footerLinkDark {
   display: inline-block;
   overflow: hidden;
   max-width: 140px;
@@ -28,6 +30,11 @@
   opacity: 0.75;
 }
 
+.footerLinkDark:hover {
+  color: #fffda7;
+  opacity: 0.75;
+}
+
 .footerItem {
   display: inline-block;
   overflow: hidden;
@@ -38,5 +45,4 @@
   color: #9b9b9b;
   text-overflow: ellipsis;
   vertical-align: center;
-
 }

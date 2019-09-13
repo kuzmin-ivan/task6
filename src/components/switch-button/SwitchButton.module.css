@@ -1,0 +1,58 @@
+.reactSwitchCheckbox,
+.reactSwitchCheckboxChecked {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.reactSwitchLabel,
+.reactSwitchLabelChecked {
+  position: relative;
+
+  display: flex;
+  width: 48px;
+  height: 25px;
+  align-items: center;
+  justify-content: space-between;
+  background: #1e30ff;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.reactSwitchLabelChecked {
+  background: #fff324;
+}
+
+.reactSwitchLabel .reactSwitchButton,
+.reactSwitchLabelChecked .reactSwitchButtonChecked {
+  position: absolute;
+
+  width: 25px;
+  height: 25px;
+  background: #fff324;
+  border-radius: 25px;
+  box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+  content: '';
+  transition: 0.2s;
+}
+
+.reactSwitchLabelChecked .reactSwitchButtonChecked {
+  background: #1e30ff;
+}
+.reactSwitchCheckboxChecked + .reactSwitchLabel .reactSwitchButton,
+.reactSwitchCheckboxChecked + .reactSwitchLabelChecked .reactSwitchButtonChecked {
+  left: calc(100%);
+  transform: translateX(-100%);
+}
+
+.reactSwitchLabel:active .reactSwitchButton,
+.reactSwitchLabelChecked:active .reactSwitchButtonChecked {
+  width: 30px;
+}
+
+.reactSwitchPosition {
+  position: absolute;
+  top: 13px;
+  right: 110px;
+}

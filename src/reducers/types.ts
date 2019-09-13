@@ -17,7 +17,6 @@ export interface IMailBoxState {
 }
 
 export const RECEIVE_LETTER = 'RECEIVE_LETTER';
-export const RECEIVE_LETTER_ANIMATION = 'RECEIVE_LETTER_ANIMATION';
 export const CHECK_ALL_LETTERS = 'CHECK_ALL_LETTERS';
 export const CHECK_LETTER = 'CHECK_LETTER';
 export const REMOVE_CHECKED_LETTERS = 'REMOVE_CHECKED_LETTERS';
@@ -25,12 +24,6 @@ export const REMOVE_CHECKED_LETTERS = 'REMOVE_CHECKED_LETTERS';
 interface IReceiveLetterAction {
   type: typeof RECEIVE_LETTER;
   payload: ILetter;
-}
-
-interface IReceiveLetterAnimationAction {
-  type: typeof RECEIVE_LETTER_ANIMATION;
-  id: number;
-  showing: boolean;
 }
 
 interface ICheckAllLettersAction {
@@ -49,7 +42,6 @@ interface IRemoveCheckedLettersAction {
 
 export type MailBoxActionTypes =
   | IReceiveLetterAction
-  | IReceiveLetterAnimationAction
   | ICheckAllLettersAction
   | ICheckLetterAction
   | IRemoveCheckedLettersAction;
@@ -75,3 +67,15 @@ interface ICloseLetterAction {
 }
 
 export type LetterActionTypes = IOpenLetterAction | ICloseLetterAction;
+
+export interface IThemeState {
+  isDarkTheme: boolean;
+}
+
+export const CHANGE_THEME = 'CHANGE_THEME';
+
+interface IChangeThemeAction {
+  type: typeof CHANGE_THEME;
+}
+
+export type ThemeActionTypes = IChangeThemeAction;

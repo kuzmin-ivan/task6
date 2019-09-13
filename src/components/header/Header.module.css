@@ -10,3 +10,8 @@
   cursor: pointer;
   float: left;
 }
+
+.mailLogo.dark {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}

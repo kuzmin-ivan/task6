@@ -4,13 +4,19 @@ import { Dispatch } from 'redux';
 import { MailBoxActionTypes } from '../../reducers/types';
 import { checkAllLetters, checkLetter } from '../../actions/actions';
 import styles from './Checkbox.module.css';
+import { AppState } from '../../reducers';
 
 export const MAIN_CHECKBOX_ID = 'check-all-letters';
+
+const mapStateToProps = (state: AppState) => ({
+  themeClass: state.theme.isDarkTheme ? styles.dark : ''
+});
 
 class Checkbox extends Component<{
   id: string;
   checked: boolean;
   dispatch: Dispatch<MailBoxActionTypes>;
+  themeClass: string;
 }> {
   public render() {
     return (
@@ -28,14 +34,13 @@ class Checkbox extends Component<{
               this.props.dispatch(checkAllLetters(this.props.checked));
             } else {
               this.props.dispatch(checkLetter(+this.props.id));
-              console.log(this.props.checked);
             }
           }}
         />
-        <span className={styles.checkLetterBox} />
+        <span className={`${styles.checkLetterBox} ${this.props.themeClass}`} />
       </label>
     );
   }
 }
 
-export default connect()(Checkbox);
+export default connect(mapStateToProps)(Checkbox);

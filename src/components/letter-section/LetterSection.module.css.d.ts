@@ -1,6 +1,4 @@
-
 declare const styles: {
-  readonly "lettersSection": string;
+  readonly lettersSection: string;
 };
 export = styles;
-

@@ -26,7 +26,6 @@
 }
 
 .clear {
-
   display: inline-block;
   margin-bottom: 4px;
   margin-left: -22px;
@@ -38,6 +37,5 @@
 }
 
 .clear:hover {
-
   opacity: 1;
 }

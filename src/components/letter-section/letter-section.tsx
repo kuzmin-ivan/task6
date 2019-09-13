@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styles from './LetterSection.module.css';
 import CoveredLetter from '../covered-letter/covered-letter';
 import OpenedLetter from '../opened-letter/opened-letter';
 import { AppState } from '../../reducers';
-import stylesMailBox from '../mail-box/MailBox.module.css';
+import letterAnimation from '../covered-letter/transitions/LetterAnimation.module.css';
 
 const mapStateToProps = (state: AppState) => ({
   isShownLetter: state.openCloseLetter.isShownLetter,
@@ -20,12 +21,13 @@ class LetterSection extends Component<ReturnType<typeof mapStateToProps>> {
           <OpenedLetter />
         ) : (
           <div>
-            {this.props.letters.map(l => (
-              <div key={`key${l.id}`}>
-                <CoveredLetter letter={l} />
-                <div className={stylesMailBox.hrLine} />
-              </div>
-            ))}
+            <TransitionGroup component={null}>
+              {this.props.letters.map(l => (
+                <CSSTransition timeout={500} classNames={{ ...letterAnimation }} key={`key${l.id}`}>
+                  <CoveredLetter letter={l} />
+                </CSSTransition>
+              ))}
+            </TransitionGroup>
           </div>
         )}
       </section>
@@ -34,4 +36,3 @@ class LetterSection extends Component<ReturnType<typeof mapStateToProps>> {
 }
 
 export default connect(mapStateToProps)(LetterSection);
-

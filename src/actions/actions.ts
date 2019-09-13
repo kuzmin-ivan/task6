@@ -1,11 +1,11 @@
 import {
+  CHANGE_THEME,
   CHECK_ALL_LETTERS,
   CHECK_LETTER,
   CLOSE_LETTER,
   ILetter,
   OPEN_LETTER,
   RECEIVE_LETTER,
-  RECEIVE_LETTER_ANIMATION,
   REMOVE_CHECKED_LETTERS
 } from '../reducers/types';
 import { generateRandomLetter } from './letter-creation';
@@ -27,12 +27,6 @@ export const closeLetter = (displayLetter: ILetter) => ({
   displayLetter
 });
 
-export const receiveAnimationLetter = (id: number) => ({
-  type: RECEIVE_LETTER_ANIMATION as 'RECEIVE_LETTER_ANIMATION',
-  showing: false,
-  id
-});
-
 export const checkAllLetters = (checked: boolean) => ({
   type: CHECK_ALL_LETTERS as 'CHECK_ALL_LETTERS',
   checked: !checked
@@ -45,4 +39,8 @@ export const checkLetter = (id: number) => ({
 
 export const removeCheckedLetters = () => ({
   type: REMOVE_CHECKED_LETTERS as 'REMOVE_CHECKED_LETTERS'
+});
+
+export const changeTheme = () => ({
+  type: CHANGE_THEME as 'CHANGE_THEME'
 });
